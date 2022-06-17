@@ -24,10 +24,12 @@ mclient.connect(DBurl)
   //create collection objects
   let userCollectionObject=dbObj.collection("usercollection");
   let productCollectionObject=dbObj.collection("productcollection");
+  let feedbackObject=dbObj.collection("feedback");
 
   //sharing collection objects to APIs
   app.set("userCollectionObject",userCollectionObject);
   app.set("productCollectionObject",productCollectionObject)
+  app.set("feedbackObject",feedbackObject)
 
   console.log("DB connection success")
 })
@@ -37,6 +39,7 @@ mclient.connect(DBurl)
 //import userApp and productApp
 const userApp = require("./APIS/userApi");
 const productApp = require("./APIS/productApi");
+const { response } = require("express");
 //excute specific middleware based on path
 app.use("/user-api", userApp);
 app.use("/product-api", productApp);

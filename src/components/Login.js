@@ -1,10 +1,9 @@
-import { useEffect } from "react";
+import { React, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Form, Button } from "react-bootstrap";
-import loginImg from "../images/login.svg";
+import loginImg from "./images/login1.svg";
 import { useSelector, useDispatch } from "react-redux";
 import { userLogin } from "../slices/userSlice";
-
 import { useNavigate } from "react-router-dom";
 
 function Login() {
@@ -27,15 +26,7 @@ function Login() {
 
   //when login form is submitted
   const onFormSubmit = (userCredentialsObject) => {
-     // console.log(userCredentialsObject)
-    if (userCredentialsObject.userType === "user") {
-      dispatch(userLogin(userCredentialsObject));
-    }
-
-    if (userCredentialsObject.userType === "admin") {
-      alert("Admin devoloplment in progress...");
-      // dispatch(userLogin(userCredentialsObject));
-    }
+    dispatch(userLogin(userCredentialsObject));
   };
 
   //this to be executed when either isSuccess or isError changed
@@ -43,12 +34,14 @@ function Login() {
     if (isSuccess) {
       navigate("/userdashboard");
     }
+    if(isError){
+      alert("Invalid Username or Password !!!");
+    }
   }, [isSuccess, isError]);
 
   return (
-    <div className="container">
-      <p className="display-2 text-center text-primary">Login</p>
-
+    <div className="container mt-5 mb-5">
+      <p className="loginst display-2 text-center text-dark">Login</p>
       <img
         src={loginImg}
         width="300px"
@@ -58,26 +51,6 @@ function Login() {
       <div className="row  ">
         <div className="col-12 col-sm-8 col-md-6  mx-auto">
           <Form onSubmit={handleSubmit(onFormSubmit)}>
-            <Form.Group className="mb-3">
-              <Form.Label>Select type of User</Form.Label> <br />
-              {/* user type */}
-              <Form.Check inline type="radio" id="user">
-                <Form.Check.Input
-                  type="radio"
-                  value="user"
-                  {...register("userType", { required: true })}
-                />
-                <Form.Check.Label>User</Form.Check.Label>
-              </Form.Check>
-              <Form.Check inline type="radio" id="admin">
-                <Form.Check.Input
-                  type="radio"
-                  value="admin"
-                  {...register("userType", { required: true })}
-                />
-                <Form.Check.Label>Admin</Form.Check.Label>
-              </Form.Check>
-            </Form.Group>
             {/* username */}
             <Form.Group className="mb-3">
               <Form.Label>Username</Form.Label>
@@ -106,7 +79,7 @@ function Login() {
               )}
             </Form.Group>
 
-            <Button variant="secondary" type="submit">
+            <Button className="t-style mb-5" variant="secondary" type="submit">
               Login
             </Button>
           </Form>

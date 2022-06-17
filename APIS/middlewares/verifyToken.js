@@ -25,10 +25,9 @@ const verifyToken = (request, response, next) => {
     next();
   } catch (err) {
    
-    
     return response.send({ message: "Session expired..Relogin to continue" });
   }
 };
 
-//expor
+//export token
 module.exports = verifyToken;

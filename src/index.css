@@ -5,30 +5,26 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: whitesmoke;
 }
 
 html {
   position: relative;
   min-height: 100%;
 }
+
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px;
- 
+  height: 50px;
+  line-height: 50px;
+
 }
 
- code {
+code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-
-.profile-pic{
-  width:60px;
-  height: 60px;
-  border-radius: 50%;
-}

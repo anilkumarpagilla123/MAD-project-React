@@ -1,17 +1,25 @@
-.active{
-  background-color: rgb(65, 150, 189);
-  color:white;
+.nav-heading {
+  font-size: 25px;
+  color: black;
   font-weight: bold;
-  text-decoration: none;
-  padding: 5px 8px;
-  border-radius: 3px;
+  font-family: 'Times New Roman', Times, serif;
+  margin-top: 15px;
+}
+.nav1-heading {
+  font-size: 25px;
+  color: black;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  margin-top: 13px;
 }
 
-a{
-  color:aliceblue;
-  text-decoration: none;
+.nav-line{
+  margin-left: 10px;
+  border-bottom: 1px solid dimgray;
 }
-
-a:hover{
-  color:aliceblue;
+.char-Img{
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  margin-top: 15px;
 }
