@@ -1,7 +1,7 @@
 import React from "react";
 import './Userdashboard.css';
 import { Nav,Container} from "react-bootstrap";
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet,NavLink } from "react-router-dom";
 import charImg from "../images/charity.png";
 
 function Userdashboard() {
@@ -24,7 +24,7 @@ function Userdashboard() {
          
           <div className="mt-3">
             <Outlet />
-          </div>
+          </div> 
         </Container>
     </div>
   );

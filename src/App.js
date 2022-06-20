@@ -9,9 +9,11 @@ import Login from "./components/Login";
 import Contactus from "./components/Contactus";
 import Userdashboard from "./components/userdashboard/Userdashboard";
 import Userprofile from "./components/user-profile/Userprofile";
-import Donate from "./components/Donate/donate";
+import Donate from "./components/Donate/Donate";
+import Payment from "./components/Payment/Payment";
 
 function App() {
+  
   return (
     <div>
       <Header />
@@ -25,6 +27,7 @@ function App() {
           <Route path="donate" element={<Donate/>}/>
           <Route path="" element={<Navigate to="profile" replace={true} />} />
         </Route>
+        <Route path="/payment" element={<Payment/>} />
       </Routes>
       <div className="footer">
         <Footer />  
