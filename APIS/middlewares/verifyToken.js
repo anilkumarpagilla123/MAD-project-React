@@ -6,7 +6,7 @@ const verifyToken = (request, response, next) => {
   //get bearer token
   let bearerToken = request.headers.authorization;
   //check token is existed
-  if (bearerToken == undefined) {
+  if (bearerToken === undefined) {
    return response.send({ message: "Unauthorized request" });
   }
   //extract token
