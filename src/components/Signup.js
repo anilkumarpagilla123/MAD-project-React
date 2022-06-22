@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { Form, Button, Container } from "react-bootstrap";
 import { MdLogin } from "react-icons/md";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 
 function Signup() {
@@ -92,9 +92,10 @@ function Signup() {
                 {errors.city && <p className="text-danger">* City is required</p>}
               </Form.Group>
 
-              <Button className="t-style mb-5" variant="secondary" type="submit">
+              <Button className="t-style mb-0 w-100" variant="secondary" type="submit">
                 Signup <MdLogin />
               </Button>
+              <h6 className="mb-5 mt-2" style={{textAlign: "center"}}>Already have an account? <Link to="/login" style = {{color:"blue"}}><u>Login</u></Link></h6>
             </Form>
           </div>
         </div>

@@ -4,7 +4,8 @@ import { Form, Button } from "react-bootstrap";
 import loginImg from "./images/login1.svg";
 import { useSelector, useDispatch } from "react-redux";
 import { userLogin } from "../slices/userSlice";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 
 function Login() {
   const {
@@ -79,9 +80,10 @@ function Login() {
               )}
             </Form.Group>
 
-            <Button className="t-style mb-5" variant="secondary" type="submit">
+            <Button className="t-style mb-0 w-100" variant="secondary" type="submit">
               Login
             </Button>
+          <h6 className="mb-5 mt-2" style={{textAlign: "center"}}>New User? <Link to="/signup" style = {{color:"blue"}}><u>Signup</u></Link></h6>
           </Form>
         </div>
       </div>
@@ -90,3 +92,11 @@ function Login() {
 }
 
 export default Login;
+
+
+
+
+
+
+
+

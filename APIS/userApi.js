@@ -93,7 +93,7 @@ userApp.post(
         userOfDB.password
       );
       //if passwords not matched
-      if (status == false) {
+      if (status === false) {
         response.send({ message: "Invalid password" });
       }
       //if passwords are matched
