@@ -31,7 +31,7 @@ function Header() {
       <Navbar collapseOnSelect expand="sm" bg="black" variant="dark">
         <Container>
           <img src={logoImg} alt="" className="logo-Img" />
-          <Navbar.Brand className="textstyle">Make a Difference</Navbar.Brand>
+          <Navbar.Brand className="textstyle" as={NavLink} to="/">Make a Difference</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto">

@@ -21,11 +21,12 @@ function Signup() {
       .post("http://localhost:4000/user-api/create-user", userObj)
       .then((response) => {
         alert(response.data.message);
-        //if user created
-        if (response.data.message === "New User created") {
-          //navigate to login
-          navigate("/login");
-        }
+        navigate("/login");
+        // //if user created
+        // if (response.data.message === "New User created") {
+        //   //navigate to login
+        //   navigate("/login");
+        // }
       })
       .catch((error) => {
         console.log(error);
