@@ -12,7 +12,7 @@ function Contactus() {
 
   const onFormSubmit = (contactObj) => {
     axios
-      .post("http://localhost:4000/user-api/contact-us", contactObj)
+      .post("http://localhost:5000/user-api/contact-us", contactObj)
       .then((response) => {
         alert(response.data.message);
       })
@@ -29,22 +29,22 @@ function Contactus() {
             <h1>How Can we Help?</h1>
             <p className='info'>Please specify the problem you fact while using this application in the message section. If you don't find what you need, fill out our contact form. Contact us for more information </p>
             <ul className="details">
-              <li class="d-flex text-black mb-2">
-                <span class="mr-3"><span class="fa fa-map-marker px-2"></span></span>  Bachupally , Hyderabad, India
+              <li className="d-flex text-black mb-2">
+                <span className="mr-3"><span className="fa fa-map-marker px-2"></span></span>  Bachupally , Hyderabad, India
               </li>
-              <li class="d-flex text-black mb-2">
-                <span class="mr-3">
-                  <span class="fa fa-phone px-2"></span>
+              <li className="d-flex text-black mb-2">
+                <span className="mr-3">
+                  <span className="fa fa-phone px-2"></span>
                 </span> 040-3456-7098
               </li>
-              <li class="d-flex text-black">
-                <span class="mr-3">
-                  <span class="fa fa-envelope px-2"></span>
+              <li className="d-flex text-black">
+                <span className="mr-3">
+                  <span className="fa fa-envelope px-2"></span>
                 </span> mad-charity@gmail.com
               </li>
             </ul>
           </div>
-          <div class="col-md-6">
+          <div className="col-md-6">
             <Form onSubmit={handleSubmit(onFormSubmit)}>
               {/* username */}
               <Form.Group className="mb-3">

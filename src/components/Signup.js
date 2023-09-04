@@ -18,7 +18,9 @@ function Signup() {
   const onFormSubmit = (userObj) => {
     //http post req
     axios
-      .post("http://localhost:4000/user-api/create-user", userObj)
+      .post("http://localhost:5000/user-api/create-user", userObj, {
+
+      })
       .then((response) => {
         alert(response.data.message);
         navigate("/login");

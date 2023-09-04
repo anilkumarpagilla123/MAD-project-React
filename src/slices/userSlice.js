@@ -3,7 +3,7 @@ import axios from 'axios';
 
 //make HTTP POST req to login user
 export const userLogin = createAsyncThunk('loginuser', async (userCredentialsObject, thunkApi) => {
-
+try{
   let response = await axios.post('/user-api/login', userCredentialsObject);
   let data = response.data;
   if (data.message === 'success') {
@@ -15,7 +15,9 @@ export const userLogin = createAsyncThunk('loginuser', async (userCredentialsObj
   if (data.message === 'Invalid user' || data.message === 'Invalid password') {
     return thunkApi.rejectWithValue(data)
   }
-
+}catch(error){
+  return thunkApi.rejectWithValue({ message: 'An error occurred' });
+}
 })
 
 
@@ -55,7 +57,7 @@ let userSlice = createSlice({
       state.isError = true;
       state.isLoading = false;
       state.isSuccess = false;
-      state.errMsg = action.payload.message;
+      state.errMsg = action.payload ? action.payload.message : 'An error occurred';
     }
   }
 })
@@ -64,4 +66,4 @@ let userSlice = createSlice({
 //export action creators
 export const { clearLoginStatus } = userSlice.actions;
 //export reducer
-export default userSlice.reducer
+export default userSlice.reducer;
